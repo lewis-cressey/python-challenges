@@ -1,0 +1,53 @@
+<!doctype html>
+
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/ace.min.js" integrity="sha512-jB1NOQkR0yLnWmEZQTUW4REqirbskxoYNltZE+8KzXqs9gHG5mrxLR5w3TwUn6AylXkhZZWTPP894xcX/X8Kbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.10.4/brython.min.js" integrity="sha512-Ku0Q6E6RaZsR8UNZKfm4GcC0ZXrDZyzj00pFmzR6YHoR9u1R4YuaM+Ew6hj50wtOr/lFRjTvQ7ZXJfGzbPAMDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.10.4/brython_stdlib.js" integrity="sha512-kMRN6F4Yq4sNLbPG2lH3EO9n776JHHZub+UWogDxVjh9uTnoVo3wtN/rnQD4C4/AZtqI2zQdvdouGAAxOGwNeA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="main.py" type="text/python"></script>
+	</head>
+	<body onload="brython()">
+		<nav id="gallery">
+			<img src="question1.png" />
+			<img src="question2.png" />
+			<img src="question3.png" />
+			<img src="question4.png" />
+			<img src="question5.png" />
+			<img src="question6.png" />
+			<img src="question7.png" />
+		</nav>
+		<main>
+			<h1>Interactive Python Challenge #2</h1>
+			<p>
+				This challenge is all about programming graphics in Python by plotting lines on a graph.
+			</p>
+			<p>
+				We can draw a line on the screen using the command <code>drawline(x1, y1, x2, y2)</code>.
+				This draws a line from the coordinates (x1, y1) to the coordinates (x2, y2).
+			</p>
+			<p>
+				Try running the program below for an example.
+				Then try to write Python code to recreate all the images in the sidebar!
+			</p>
+			<div id="edit-region">
+				<div id="popup-layer" class="hidden">
+					<pre id="stderr">
+					</pre>
+				</div>
+				<div id="editor">#This is an example program which generates lined paper
+for y in range(-300, 300, 20):
+	drawline(-300, y, 300, y)
+				</div>
+			</div>
+			<div id="button-bar">
+				<button id="run-button">Run program</button>
+				<button id="save-button">Save image</button>
+				<a download="image.png" id="image-download-link"></a>
+			</div>
+			<canvas id="my-canvas" width="780" height="780">
+			</canvas>
+		</main>
+	</body>
+</html>
