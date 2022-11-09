@@ -10,9 +10,12 @@ class Square:
         self.element = document[name]
         self.value = ""
     
+    def to_canonical(self, value):
+        return str(value).strip().upper()
+    
     def __eq__(self, value):
         if value is self: return True
-        value = str(value).upper()
+        value = self.to_canonical(value)
         if value == self.value: return True
         return False
         
@@ -23,8 +26,8 @@ class Square:
         return self.value == ""
     
     def set_contents(self, value = ""):
-        value = str(value).upper()
-        if value not in [ "X", "O", "" ]: value = ""
+        value = self.to_canonical(value)
+        if value not in ("X", "O", ""): value = ""
         self.value = value
         self.element.innerHTML = self.get_glyph(value)
         self.element.setAttribute("class", value)
