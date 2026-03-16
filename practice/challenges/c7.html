@@ -1,0 +1,38 @@
+<div class="problem">
+    <p>
+        Ask the user to enter a word.
+    </p>
+    <p>
+        Print the word with the letters in reverse order.
+    </p>
+</div>
+
+<div class="help">
+    <p>
+        You can build a new empty string and add characters to it.
+    </p>
+    <p>
+        Try looping through the original string from the last character to the first.
+    </p>
+    <p>
+        Alternatively, add each new character to the <i>front</i> of your result string.
+    </p>
+</div>
+
+<div class="code">
+# Write your code here
+</div>
+
+<div class="validate">
+import random
+
+def generate(i):
+    words = [ "python", "code", "loop", "string", "variable", "dictionary", "reversal", "palindrome" ]
+    word = random.choice(words)
+    i.write(word)
+
+def validate(i, o):
+    word = i.read()
+    expected = word[::-1]
+    assert o.read() == expected
+</div>

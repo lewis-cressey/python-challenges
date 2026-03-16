@@ -1,0 +1,30 @@
+<div class="problem">
+    <p>
+        Ask the user to enter their age.
+    </p>
+    <p>
+        Print "happy birthday" once for every year old they are.
+    </p>
+</div>
+
+<div class="help">
+    <p>
+        Convert the input to an integer using <code>int()</code>.
+    </p>
+    <p>
+        Use a <code>for</code> loop with <code>range()</code> to repeat the print statement.
+    </p>
+</div>
+
+<div class="validate">
+import random
+
+def generate(i):
+    age = random.randint(1, 10)
+    i.write(str(age))
+
+def validate(i, o):
+    age = int(i.read())
+    for i in range(age):
+        assert o.read() == "HAPPY BIRTHDAY"
+</div>

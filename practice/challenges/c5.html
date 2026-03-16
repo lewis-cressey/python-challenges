@@ -1,0 +1,45 @@
+<div class="problem">
+    <p>
+        Read numbers from the user until they enter 0.
+    </p>
+    <p>
+        Print the average of all the numbers entered (excluding the 0).
+    </p>
+</div>
+
+<div class="help">
+    <p>
+        Use a <code>while</code> loop to keep reading input.
+    </p>
+    <p>
+        Keep a running total and a count of the numbers.
+    </p>
+    <p>
+        Divide the total by the count to get the average.
+    </p>
+</div>
+
+<div class="validate">
+import random
+
+def generate(i):
+    count = random.randint(1, 20)
+    for _ in range(count):
+        val = random.uniform(1.0, 100.0)
+        i.write(str(val))
+    i.write("0")
+
+def validate(i, o):
+    total = 0.0
+    count = 0
+    while True:
+        val = float(i.read())
+        if val == 0:
+            break
+        total += val
+        count += 1
+    
+    expected = total / count
+    user_val = float(o.read())
+    assert abs(user_val - expected) <= 0.01
+</div>

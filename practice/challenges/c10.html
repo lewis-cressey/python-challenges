@@ -1,0 +1,42 @@
+<div class="problem">
+    <p>
+        Print all palindromic numbers from 11 to 999 inclusive.
+    </p>
+    <p>
+        A palindromic number reads the same forwards and backwards (e.g., 121).
+    </p>
+    <p>
+        Print each number on a new line. The order does not matter.
+    </p>
+</div>
+
+<div class="help">
+    <p>
+        Use a loop to iterate through numbers from 11 to 999.
+    </p>
+    <p>
+        Convert each number to a string to check if it equals its reverse.
+    </p>
+</div>
+
+<div class="validate">
+def generate(i):
+    pass
+
+def validate(i, o):
+    expected = []
+    for n in range(11, 1000):
+        s = str(n)
+        if s == s[::-1]:
+            expected.append(s)
+    
+    output = []
+    while True:
+        try:
+            line = o.read()
+            output.append(line)
+        except Exception:
+            break
+            
+    assert sorted(output) == sorted(expected)
+</div>

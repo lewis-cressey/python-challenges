@@ -1,0 +1,201 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+   	border: 0;
+}
+
+body {
+	background: #eee;
+}
+
+nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 8rem;
+    height: 100%;
+    overflow-y: scroll;
+    background: white;
+    z-index: 1;
+    
+    display: relative;
+}
+
+main {
+    margin-left: 8rem;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: medium;
+    padding: 1rem 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: medium;
+    padding: 0 0 1rem 0;
+}
+
+.code-area {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.editor-container {
+    height: 24rem;
+    width: 40rem;
+    border: 1px solid black;
+    overflow: auto;
+}
+
+#level-buttons {
+    position: absolute;
+    inset: 0;
+    flex-grow: 1;
+    background: #a97;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+    justify-content: start;
+
+    & button {
+        margin: 0.4rem 0;
+        padding: 1rem;
+        background: #986;
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 1px 1px 1px solid;
+    }
+
+    & button.completed {
+        color: #aaa;
+        text-decoration: line-through;
+    }
+}
+
+/*********************************************************************
+ * Utility classes                                                   *
+ *********************************************************************/
+
+.row-centred {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/*********************************************************************
+ * Dialogs                                                           *
+ *********************************************************************/
+
+dialog {
+    margin: auto;
+    inset: 0;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    max-width: 90%;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+dialog button {
+    margin: 1rem 1rem 0.5rem 1rem;
+    padding: 0.5rem 1.5rem;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+dialog button:hover {
+  background: #0056b3;
+}
+
+.hidden {
+    display: none;
+}
+
+.toolbar {
+	display: flex;
+	gap: 8px;
+	padding: 8px;
+	background: #f7f7f7;
+	border: 1px solid #ddd;
+	border-radius: 4px 4px 0 0;
+}
+.toolbar button {
+	padding: 6px 12px;
+	border: 1px solid #ccc;
+	background: white;
+	cursor: pointer;
+	border-radius: 3px;
+	font-size: 14px;
+}
+.toolbar button:hover {
+	background: #eef;
+	border-color: #99c;
+}
+
+#tab-bar {
+    height: 2rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: start;
+    align-items: stretch;
+    background: black;
+    gap: 1px;
+    padding-bottom: 1px;
+}
+
+#tab-bar button {
+    width: 10rem;
+    background: #eee;
+    color: black;
+    
+    &:disabled {
+        font-weight: bold;
+        background: #fff;
+    }
+}
+
+#output-container {
+	height: 24rem;
+    width: 40rem;
+    border: 1px solid black;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+#output-frame {
+    flex-grow: 1;
+	overflow-y: auto;
+	background: #f5f5f5;
+    position: relative;
+}
+
+.pane {
+    position: absolute;
+    inset: 0;
+    padding: 10px;
+}
+
+#console {
+	font-family: monospace;
+	white-space: pre-wrap;
+}

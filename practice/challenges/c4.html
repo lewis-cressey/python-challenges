@@ -1,0 +1,34 @@
+<div class="problem">
+    <p>
+        Read 5 floating point numbers from the user.
+    </p>
+    <p>
+        Calculate the average and print only the resulting number.
+    </p>
+</div>
+
+<div class="help">
+    <p>
+        Convert inputs to floats using <code>float()</code>.
+    </p>
+    <p>
+        Sum the numbers and divide by 5.
+    </p>
+</div>
+
+<div class="validate">
+import random
+
+def generate(i):
+    for _ in range(5):
+        val = random.uniform(1.0, 100.0)
+        i.write(str(val))
+
+def validate(i, o):
+    total = 0.0
+    for _ in range(5):
+        total += float(i.read())
+    expected = total / 5.0
+    user_val = float(o.read())
+    assert abs(user_val - expected) <= 0.01
+</div>

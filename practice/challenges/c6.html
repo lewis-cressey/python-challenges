@@ -1,0 +1,37 @@
+<div class="problem">
+    <p>
+        Ask the user to enter a word.
+    </p>
+    <p>
+        Count how many times the letter 'a' (upper or lower case) appears in the word.
+    </p>
+    <p>
+        Print the count as a number.
+    </p>
+</div>
+
+<div class="help">
+    <p>
+        Use <code>input()</code> to get the word.
+    </p>
+    <p>
+        You can use the string method <code>.upper()</code> to change text to UPPER CASE.
+    </p>
+    <p>
+        You can loop through the letters in text using a for loop like this: <code>for letter in text: print(letter)</code>.
+    </p>
+</div>
+
+<div class="validate">
+import random
+
+def generate(i):
+    words = ["Apple", "Banana", "Car", "Door", "Elephant", "Fish", "Grape"]
+    word = random.choice(words)
+    i.write(word)
+
+def validate(i, o):
+    word = i.read()
+    expected = str(word.count('A'))
+    assert o.read() == expected
+</div>

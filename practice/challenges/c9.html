@@ -1,0 +1,52 @@
+<div class="problem">
+    <p>
+        Ask the user to enter two positive integers.
+    </p>
+    <p>
+        Calculate and print their Highest Common Factor (HCF).
+    </p>
+</div>
+
+<div class="help">
+    <p>
+        Convert the inputs to integers using <code>int()</code>.
+    </p>
+    <p>
+        The HCF is the largest number that divides both integers without a remainder.
+    </p>
+    <p>
+        You can use a loop to check numbers starting from the smaller of the two inputs, going downwards until you find a number that divides both.
+    </p>
+</div>
+
+<div class="code">
+# Write your code here
+</div>
+
+<div class="validate">
+import random
+import math
+
+def generate(i):
+    # Generate an HCF between 11 and 99 (10 < hcf < 100)
+    hcf = random.randint(11, 99)
+    
+    # Find two coprime multipliers to ensure the HCF is exactly 'hcf'
+    while True:
+        m1 = random.randint(10, 100)
+        m2 = random.randint(10, 100)
+        if math.gcd(m1, m2) == 1:
+            break
+            
+    num1 = hcf * m1
+    num2 = hcf * m2
+    
+    i.write(str(num1))
+    i.write(str(num2))
+
+def validate(i, o):
+    num1 = int(i.read())
+    num2 = int(i.read())
+    expected = str(math.gcd(num1, num2))
+    assert o.read() == expected
+</div>

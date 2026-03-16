@@ -1,0 +1,36 @@
+<div class="problem">
+    <p>
+        Ask the user for the width and height of a rectangle.
+    </p>
+    <p>
+        Calculate the area and print only the resulting number.
+    </p>
+</div>
+
+<div class="help">
+    <p>
+        Use <code>input()</code> to get values from the user.
+    </p>
+    <p>
+        Convert the input strings to integers using <code>int()</code>.
+    </p>
+    <p>
+        Multiply width by height to get the area.
+    </p>
+</div>
+
+<div class="validate">
+import random
+
+def generate(i):
+    width = random.randint(1, 10)
+    height = random.randint(1, 10)
+    i.write(str(width))
+    i.write(str(height))
+
+def validate(i, o):
+    width = int(i.read())
+    height = int(i.read())
+    expected = str(width * height)
+    assert o.read() == expected
+</div>

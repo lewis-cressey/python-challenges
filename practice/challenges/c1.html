@@ -1,0 +1,36 @@
+<div class="problem">
+    <p>
+        In this question, you need to ask the user for their name.
+    </p>
+    <p>
+        You must then print a message "Hello <b>name</b>"
+        where <b>name</b> is the name they entered.
+    </p>
+</div>
+
+<div class="help">
+    <p>
+        To ask the user to enter data, use the <code>input()</code>
+        command. Store the result in a variable.
+    </p>
+    <p>
+        To print a message, use the <code>print</code> command.
+        For example: <code>print("The sum of 3 and 5 is", 3 + 5)</code>
+    </p>
+</div>
+
+<div class="code">
+# Write your program code in this box
+</div>
+
+<div class="validate">
+import random
+
+def generate(i):
+    name = random.choice([ "Bob", "Emma", "Charlie", "Andrew", "Francis" ])
+    i.write(name)
+
+def validate(i, o):
+    name = i.read()
+    assert o.read() == f"HELLO {name}"
+</div>

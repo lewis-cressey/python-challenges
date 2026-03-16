@@ -1,0 +1,53 @@
+<!doctype html>
+
+<html>
+	<head>
+        <meta charset="utf-8" />
+		<link rel="stylesheet" href="style.css" />
+
+        <!-- Brython -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.13.2/brython.min.js" integrity="sha512-IKveykv1kbclOAQgkHa8FlDamEXz4VXLCfQFjaWSou9/+pRVt1vvhnwJYUYgMDkm2OFSRpQBWZKf3C9YpNDM9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.13.2/brython_stdlib.min.js" integrity="sha512-qvkLif4T+bZt+cx/RX2cub67tAx3lalol0A0An2tKD7YkXVBFBr+QGMhUrEmBRwJtg4QSsVEWMxF8zmA4woB5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+		<script type="text/python" class="webworker" id="pyworker" src="pyworker.py"></script>
+		<script type="text/python" src="main.py"></script>
+	</head>
+	<body>
+        <nav>
+            <div id="level-buttons"></div>
+        </nav>
+		<main>
+            <h1 id="title"></h1>
+            <p id="description"></p>
+            <div class="code-area">
+                <div class="editor-container">
+                    <div class="toolbar">
+                        <button id="btn-prev" title="Previous question">⏮️</button>
+                        <button id="btn-next" title="Next question">⏭️</button>
+                        <button id="btn-run" title="Run">▶️</button>
+                        <button id="btn-cut" title="Cut">✂️</button>
+                        <button id="btn-copy" title="Copy">📋</button>
+                        <button id="btn-paste" title="Paste">📥</button>
+                    </div>
+                    <div id="editor"></div>
+                </div>
+                <div id="output-container">
+                    <div id="tab-bar">
+                        <button data-name="console">Console</button>
+                        <button data-name="help">Help</button>
+                    </div>
+                    <div id="output-frame">
+                        <div id="console" data-name="console" class="pane"></div>
+                        <div id="help" data-name="help" class="pane">sdf</div>
+                    </div>
+                </div>
+            </div>
+		</main>
+        <dialog id="dialog-completed"><form method="dialog">
+            <p>Question completed.</p>
+            <div class="row-centred"><button>OK</button></div>
+        </form></dialog>
+        <div id="question" class="hidden"></div>
+	</body>
+	<script type="module" src="main.js"></script>
+</html>
