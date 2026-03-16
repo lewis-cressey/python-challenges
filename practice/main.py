@@ -59,7 +59,7 @@ async def set_qno(qno = None):
     description_node = document["description"]
     help_node = document["help"]
     
-    response = await browser.aio.get(f"/challenges/c{qno + 1}.html")
+    response = await browser.aio.get(f"challenges/c{qno + 1}.html")
     document["title"].textContent = f"Problem {qno + 1}"
 
     description_node.innerHTML = ""
