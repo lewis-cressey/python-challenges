@@ -1,24 +1,16 @@
-import { EditorView, basicSetup } from "https://esm.sh/@codemirror/basic-setup";
-import { python } from "https://esm.sh/@codemirror/lang-python";
 import {Bitmap} from "./Bitmap.js"
 
 const completionRecord = new Bitmap(window.localStorage.getItem("reptrile"))
 const consoleDiv = document.getElementById("console")
-let editorView = null
+let editor = null
 
 window.pyx = {
     getCode: function() {
-        return editorView.state.doc.toString()
+        return editor.getValue()
     },
     
     setCode: function(code) {
-        editorView.dispatch({
-          changes: {
-            from: 0,
-            to: editorView.state.doc.length,
-            insert: code
-          }
-        })
+        editor.setValue(code)
     },
 
     clear: function() {
@@ -57,9 +49,9 @@ window.pyx = {
 };
 
 window.addEventListener("load", async function() {
-	editorView = new EditorView({
-		extensions: [basicSetup, python()],
-		parent: document.querySelector("#editor")
+	editor = CodeMirror(document.getElementById("editor"), {
+		mode: "python",
+        lineNumbers: true,
 	})
 
     const tabBar = document.querySelector("#tab-bar")
